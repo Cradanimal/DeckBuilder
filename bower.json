@@ -1,0 +1,17 @@
+{
+  "name": "2016-06-mvp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Cradanimal <cradwimb@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Cradanimal/2016-06-mvp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
