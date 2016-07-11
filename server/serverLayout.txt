@@ -1,0 +1,17 @@
+server.js should go in the server file
+config folder in server folder
+deck folder in server folder
+routes.js in config folder, were http requests are mapped to controllers
+middleware.js in config folder just to get into the habit
+deckController.js in deck, were functions that address http requests are defined
+api requests will exist in deckController.js
+deckModel.js in deck were, a schema for deck is laid out and initialized
+mongoose connection can be defined in server.js
+
+server dependancies
+-express*
+-request*
+-morgan*
+-body-parser*
+-mongoose*
+-path*
