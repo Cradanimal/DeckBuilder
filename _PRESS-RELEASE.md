@@ -1,5 +1,5 @@
 # Project Name #
-
+MTG App
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
@@ -18,27 +18,37 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  MTG Deckbuilder
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  An app were MTG fans can research cards and build templete decks.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  This app gives you a place to research cards and then store a deck as you work on it over time. This way you can organize and build a deck quickly online, so you can see how the cards will work together, before you go to the trouble of physically aquiring them. Access to current and legacy sets. 
 
 ## Problem ##
   > Describe the problem your product solves.
+  Its difficult plan a deck you want to build and keep track of all the cards that will be included while researching cards to add.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  MTG Deckbuilder lets you research cards and add them to your deck and then keeps track of them for you so you can update or add cards as you need to.
+
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  "Finally I can get all the Black Lotuses I need." - Conrad Wimberly (Super-Dork)
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  Just type in a search and start adding cards to your deck, its that easy!
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "Before this I would have to build entire decks in one sitting, MTG Deckbuilder makes it easy for a dumb-dumb like me to compete with all these fourteen year-olds at the card shop." - Area Man
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Check it out at localhost:3000 and start building the deck of your dreams!
