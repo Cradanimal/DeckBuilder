@@ -58,7 +58,7 @@ angular.module('deckBuilder.search', [])
   $scope.nextPage = function() {
     if ($scope.lastSearch !== '') {
         $scope.page++;
-        colorSearch($scope.lastSearch);
+        $scope.colorSearch($scope.lastSearch);
       }
     };
 
