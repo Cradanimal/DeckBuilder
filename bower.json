@@ -14,7 +14,4 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "masonry": "^4.1.0"
-  }
 }

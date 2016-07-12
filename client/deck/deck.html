@@ -1,3 +1,11 @@
-<div ng-controller='deckController'>
+<div ng-controller='deckController' class='container'>
   <a href='/search'>Get yo search on!</a>
+  <form role='form'> 
+    <label>Get your Deck</label>
+    <input class='form-control' type='text' placeholder='enter a username' ng-model='data.name'>
+    <input type='submit' ng-click='getDeck(data.name)'>
+  </form>
+  <div class="card" ng-repeat="card in data.cards">
+        <img ng-src="{{ card.card }}" >
+    </div>
 </div>

@@ -19,8 +19,9 @@ module.exports = {
   },
 
   addCard: function(req, res) {
+    console.log(req.body);
     Deck.create({
-      username: req.body.username,
+      username: req.body.username.toLowerCase(),
       deckname: req.body.deckname || 'myDeck',
       card: req.body.card
     });
@@ -29,7 +30,7 @@ module.exports = {
 
   searchName: function(req, res) {
     var name = req.query.name.split(" ").join("+");
-    request("https://api.magicthegathering.io/v1/cards?name=" + name + "&pageSize=3", function(err, resp, body) {
+    request("https://api.magicthegathering.io/v1/cards?name=" + name + "&page=3&pageSize=100", function(err, resp, body) {
       if (err) {
         console.log('request errr');
         res.send(404);
@@ -41,7 +42,7 @@ module.exports = {
 
   searchColor: function(req, res) {
     var color = req.query.color;
-    request("https://api.magicthegathering.io/v1/cards?color=" + color + "&pageSize=3", function(err, resp, body) {
+    request("https://api.magicthegathering.io/v1/cards?colors=" + color + "&set=ktk&pageSize=100", function(err, resp, body) {
       if (err) {
         console.log('request errr');
         res.send(404);
