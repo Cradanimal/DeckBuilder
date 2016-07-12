@@ -9,7 +9,7 @@ angular.module('deckBuilder.search', [])
     window.username = prompt("What your name?");
   }
 
-  $scope.page = 20;
+  $scope.page = 30;
 
   $scope.lastSearch = '';  
 

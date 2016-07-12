@@ -1,7 +1,16 @@
 <div ng-controller='searchController' class='container'>
   <img ng-src="http://perfectfitcomputers.ca/wp-content/uploads/2014/08/aviato-logo.jpg">
   <h2>Search for Cards</h2>
-  <a href='/deck'>Check out the Deck</a>
+  <nav class='navbar navbar-default'>
+    <div class='container-fluid'>
+      <div class='navbar-header'>
+        <a class='navbar-brand' >Aviato</a>
+      </div>
+        <ul class='nav navbar-nav'>
+          <li><a href="/deck">Decks</a></li>
+        </ul>
+    </div>
+  </nav>
   <form role='form' ng-submit='nameSearch(nameQ)'> 
     <label>Name Search</label>
     <input class='form-control' type='text' placeholder='search by card name' ng-model='nameQ'>
@@ -18,7 +27,8 @@
         <img ng-src="{{ card.imageUrl }}" ng-click='addCard(card.imageUrl)'>
     </div>
 
-    <button ng-click="nextPage()">Next Page</button>
+    <button class='card' ng-click="prevPage()">Prev Page</button>
+    <button class='card' ng-click="nextPage()">Next Page</button>
 </div>
 
 

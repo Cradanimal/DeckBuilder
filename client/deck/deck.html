@@ -1,11 +1,19 @@
 <div ng-controller='deckController' class='container'>
-  <a href='/search'>Get yo search on!</a>
+  <nav class='navbar navbar-default'>
+    <div class='container-fluid'>
+      <div class='navbar-header'>
+        <a class='navbar-brand'>Aviato</a>
+      </div>
+        <ul class='nav navbar-nav'>
+          <li><a href='/search'>Search</a></li>
+        </ul>
+    </div>
   <form role='form'> 
     <label>Get your Deck</label>
     <input class='form-control' type='text' placeholder='enter a username' ng-model='data.name'>
     <input type='submit' ng-click='getDeck(data.name)'>
   </form>
-  <div class="card" ng-repeat="card in data.cards">
-        <img ng-src="{{ card.card }}"  ng-click='removeCard(card._id, card)'>
+  <div class='card' ng-repeat='card in data.cards'>
+        <img ng-src='{{ card.card }}'  ng-click='removeCard(card._id, card)'>
     </div>
 </div>
