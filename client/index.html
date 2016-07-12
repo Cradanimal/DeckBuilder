@@ -1,9 +1,9 @@
 <!doctype html>
 
-<html ng-app=""  lang="en">
+<html ng-app="deckBuilder"  lang="en">
 <head>
-  <meta charset="utf-8">
   <base href= "/">
+  <meta charset="utf-8">
   <title>DeckBuilder</title>
 
 
@@ -15,6 +15,12 @@
 <body>
   <div>You're doing so Well!</div>
   <div ng-view></div>
-  <script></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/masonry/dist/masonry.pkgd.min.js"></script>
+
+  <script src="deckBuilder.js"></script>
+  <script src="search/search.js"></script>
+  <script src="deck/deck.js"></script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+<div ng-controller='searchController'>
+  <a href='/deck'>Check out the Deck</a>
+  <input type='text' placeholder='search by card name' ng-model='data.name'>
+  <input type='submit' ng-click='nameSearch(data.name)'>
+  <input type='text' placeholder='search by card color' ng-model='data.color'>
+  <input type='submit' ng-click='colorSearch(data.color)'>
+<!--   <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }' ng-repeat='card in data.cards track by $index'>
+      <div class="grid-item">
+        <img src={{card.imageUrl}}>
+      </div>  
+  </div>   -->
+  <div ng-repeat='card in cards'>
+  <img src={{card.imageUrl}}
+  </div>
+</div>

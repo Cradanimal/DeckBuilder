@@ -15,3 +15,14 @@ server dependancies
 -body-parser*
 -mongoose*
 -path*
+
+
+
+Build out client side
+Search page
+Deck Page
+install angular and angular-route
+install bootstrap
+install masonry js
+load scripts into index.html
+enable navigation
