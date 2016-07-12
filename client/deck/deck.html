@@ -6,6 +6,6 @@
     <input type='submit' ng-click='getDeck(data.name)'>
   </form>
   <div class="card" ng-repeat="card in data.cards">
-        <img ng-src="{{ card.card }}" >
+        <img ng-src="{{ card.card }}"  ng-click='removeCard(card.card, card._id)' >
     </div>
 </div>

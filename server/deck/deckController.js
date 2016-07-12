@@ -6,15 +6,17 @@ module.exports = {
 
   getDeck: function(req, res) {
     console.log(req.query);
-    Deck.find({ username : req.query.username })
+    Deck.find({ username : req.query.username.toLowerCase() })
       .then(function(data) {
         res.json(data);
       });
   },
 
   removeCard: function(req, res) {
-    var id = req.body.id;
-    Deck.find({id: id}).remove().exec();
+    var card = req.body.id;
+    // var username = req.body.username.toLowerCase();
+    console.log(card);
+    Deck.findOne({_id: card}).remove().exec();
     res.sendStatus(201);
   },
 
@@ -30,7 +32,7 @@ module.exports = {
 
   searchName: function(req, res) {
     var name = req.query.name.split(" ").join("+");
-    request("https://api.magicthegathering.io/v1/cards?name=" + name + "&page=3&pageSize=100", function(err, resp, body) {
+    request("https://api.magicthegathering.io/v1/cards?name=" + name + "&page=", function(err, resp, body) {
       if (err) {
         console.log('request errr');
         res.send(404);
@@ -42,7 +44,7 @@ module.exports = {
 
   searchColor: function(req, res) {
     var color = req.query.color;
-    request("https://api.magicthegathering.io/v1/cards?colors=" + color + "&set=ktk&pageSize=100", function(err, resp, body) {
+    request("https://api.magicthegathering.io/v1/cards?colors=" + color + "&set=ktk", function(err, resp, body) {
       if (err) {
         console.log('request errr');
         res.send(404);
