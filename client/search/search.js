@@ -3,10 +3,10 @@ angular.module('deckBuilder.search', [])
 
   $scope.data = {};
 
-  $scope.username = $scope.username || undefined;
+  // $scope.username = $scope.username || undefined;
 
-  if ($scope.username === undefined) {
-    $scope.username = prompt("What name?");
+  if (window.username === undefined) {
+    window.username = prompt("What your name?");
   }
 
   $scope.page = 20;
@@ -49,7 +49,7 @@ angular.module('deckBuilder.search', [])
       method: 'POST',
       url: '/api/cards/user',
       data : {
-        username: $scope.username,
+        username: window.username.toLowerCase(),
         card: source,
       }
     });

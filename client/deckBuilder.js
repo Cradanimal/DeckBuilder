@@ -12,7 +12,7 @@ angular.module('deckBuilder', [
       templateUrl: 'deck/deck.html',
       controller: 'deckController'
     })
-    .otherwise('/deck');
+    .otherwise('/search');
  
     $locationProvider.html5Mode(true);
   });
