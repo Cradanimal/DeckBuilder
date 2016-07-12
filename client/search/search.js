@@ -9,7 +9,7 @@ angular.module('deckBuilder.search', [])
     $scope.username = prompt("What name?");
   }
 
-  $scope.page = 0;
+  $scope.page = 20;
 
   $scope.lastSearch = '';  
 
@@ -37,7 +37,7 @@ angular.module('deckBuilder.search', [])
     $scope.lastSearch = color;
     return $http({
       method: 'GET',
-      url:"https://api.magicthegathering.io/v1/cards?set=RAV&color=" + color + page
+      url:"https://api.magicthegathering.io/v1/cards?colors=" + color + page
     })
     .then(function(data){
       $scope.cards = data.data.cards
@@ -63,7 +63,10 @@ angular.module('deckBuilder.search', [])
     };
 
   $scope.prevPage = function() {
-    $scope.page--;
-  }
+    if ($scope.lastSearch !== '') {
+        $scope.page--;
+        $scope.colorSearch($scope.lastSearch);
+      }
+    };
 
 });
