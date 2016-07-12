@@ -1,17 +1,20 @@
 <div ng-controller='searchController' class='container'>
+  <img ng-src="http://perfectfitcomputers.ca/wp-content/uploads/2014/08/aviato-logo.jpg">
   <h2>Search for Cards</h2>
   <a href='/deck'>Check out the Deck</a>
   <form role='form'> 
     <label>Name Search</label>
-    <input class='form-control' type='text' placeholder='search by card name' ng-model='data.name'>
-    <input type='submit' ng-click='nameSearch(data.name)'>
+    <input class='form-control' type='text' placeholder='search by card name' ng-model='nameQ'>
+    <input type='submit' ng-click='nameSearch(nameQ)'>
     <p></p>
     <label>Color Search</label>
-    <input class='form-control' type='form-control' placeholder='search by card color' ng-model='data.color'>
-    <input type='submit' ng-click='colorSearch(data.color)'>
+    <input class='form-control' type='form-control' placeholder='search by card color' ng-model='colorQ'>
+    <input type='submit' ng-click='colorSearch(colorQ)'>
     <h3>Just click to save a card to your deck</h3>
   </form>
     <div class="card" ng-repeat="card in cards">
         <img ng-src="{{ card.imageUrl }}" ng-click='addCard(card.imageUrl)'>
     </div>
+
+    <button ng-click="nextPage()">Next Page</button>
 </div>

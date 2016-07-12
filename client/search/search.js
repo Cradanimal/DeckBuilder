@@ -1,10 +1,17 @@
 angular.module('deckBuilder.search', [])
 .controller('searchController', function($scope, $http) {
+
   $scope.data = {};
+
   $scope.username = $scope.username || undefined;
+
   if ($scope.username === undefined) {
     $scope.username = prompt("What name?");
   }
+
+  $scope.page = 0;
+
+  $scope.lastSearch = '';  
 
   $scope.nameSearch = function(name) {
     if (name !== undefined) {
@@ -12,22 +19,29 @@ angular.module('deckBuilder.search', [])
     }
     return $http({
       method: 'GET',
-      url:'/api/cards/name?name='+name
+      url:"https://api.magicthegathering.io/v1/cards?name="+name
     })
     .then(function(data){
-      data = JSON.parse(data.data);
-      $scope.cards = data.cards;
+      console.log(data);
+      $scope.cards = data.data.cards;
+      $scope.nameQ = '';
     });
   }
   $scope.colorSearch = function(color) {
-    console.log(color);
+    var page = '';
+    if ($scope.page !== 0) {
+      page = '&page='+$scope.page;
+      console.log(page)
+    }
+    
+    $scope.lastSearch = color;
     return $http({
       method: 'GET',
-      url:'/api/cards/color?color='+color
+      url:"https://api.magicthegathering.io/v1/cards?set=RAV&color=" + color + page
     })
     .then(function(data){
-      data = JSON.parse(data.data);
-      $scope.cards = data.cards;
+      $scope.cards = data.data.cards
+      $scope.colorQ = '';
     });
   };
   $scope.addCard = function(source) {
@@ -40,4 +54,16 @@ angular.module('deckBuilder.search', [])
       }
     });
   };
+
+  $scope.nextPage = function() {
+    if ($scope.lastSearch !== '') {
+        $scope.page++;
+        colorSearch($scope.lastSearch);
+      }
+    };
+
+  $scope.prevPage = function() {
+    $scope.page--;
+  }
+
 });

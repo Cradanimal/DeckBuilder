@@ -5,7 +5,6 @@ var request = require('request');
 module.exports = {
 
   getDeck: function(req, res) {
-    console.log(req.query);
     Deck.find({ username : req.query.username.toLowerCase() })
       .then(function(data) {
         res.json(data);
@@ -14,8 +13,6 @@ module.exports = {
 
   removeCard: function(req, res) {
     var card = req.body.id;
-    // var username = req.body.username.toLowerCase();
-    console.log(card);
     Deck.findOne({_id: card}).remove().exec();
     res.sendStatus(201);
   },

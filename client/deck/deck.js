@@ -17,8 +17,16 @@ angular.module('deckBuilder.deck', [])
     });
   };
 
-  $scope.removeCard = function(card, id) {
-    console.log(id)
+  $scope.removeCard = function(id) {
+    var indexForSplice = null;
+    $scope.data.cards.forEach(function(card, ind){
+      if (card._id === id) {
+        indexForSplice = ind;
+      }
+    });
+    $scope.data.cards.splice(indexForSplice, 1);
+
+    console.log($scope.data.cards);
     return $http({
       method: 'POST',
       url: '/api/cards/delete',
